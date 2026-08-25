@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Interactive static demo of Kate Craig's IDX property-search project." />
+    <meta name="theme-color" content="#172033" />
+    <title>IDX Property Search Demo | Kate Craig</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="idx-demo.css" />
+  </head>
+  <body>
+    <a class="demo-skip" href="#results">Skip to listings</a>
+    <header class="demo-header">
+      <a class="demo-brand" href="idx.html" aria-label="Return to IDX case study">IDX<span>/demo</span></a>
+      <p>Static portfolio demonstration</p>
+      <a href="idx.html">← Case study</a>
+    </header>
+
+    <main>
+      <section class="demo-hero">
+        <p class="demo-eyebrow">FICTIONAL SAMPLE LISTINGS</p>
+        <h1>Find a place<br />that feels like <em>home.</em></h1>
+        <p>This interactive demo recreates the search experience with a small, browser-based dataset. No live MLS data or database connection is used.</p>
+      </section>
+
+      <form class="filter-panel" id="filters">
+        <label class="search-field">Search
+          <input id="search" type="search" placeholder="Neighborhood or feature" autocomplete="off" />
+        </label>
+        <label>City
+          <select id="city"><option value="">All cities</option></select>
+        </label>
+        <label>Min price
+          <select id="min-price">
+            <option value="0">No minimum</option><option value="400000">$400k</option><option value="600000">$600k</option><option value="800000">$800k</option>
+          </select>
+        </label>
+        <label>Max price
+          <select id="max-price">
+            <option value="99999999">No maximum</option><option value="600000">$600k</option><option value="800000">$800k</option><option value="1000000">$1M</option>
+          </select>
+        </label>
+        <label>Bedrooms
+          <select id="beds"><option value="0">Any</option><option value="2">2+</option><option value="3">3+</option><option value="4">4+</option></select>
+        </label>
+        <button class="clear-button" type="reset">Clear filters</button>
+      </form>
+
+      <section class="results-section" id="results" tabindex="-1">
+        <div class="results-heading">
+          <div><p class="demo-eyebrow">SEARCH RESULTS</p><h2 id="result-count">Properties</h2></div>
+          <label>Sort by
+            <select id="sort"><option value="featured">Featured</option><option value="price-low">Price: low to high</option><option value="price-high">Price: high to low</option></select>
+          </label>
+        </div>
+        <div class="listing-grid" id="listing-grid" aria-live="polite"></div>
+        <nav class="pagination" id="pagination" aria-label="Listing pages"></nav>
+      </section>
+    </main>
+
+    <dialog class="property-dialog" id="property-dialog">
+      <button class="dialog-close" type="button" aria-label="Close property details">×</button>
+      <div id="dialog-content"></div>
+    </dialog>
+    <script src="idx-demo.js"></script>
+  </body>
+</html>

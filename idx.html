@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Kate Craig's IDX Property Search software internship case study." />
+    <meta name="theme-color" content="#6d2d5b" />
+    <title>IDX Property Search | Kate Craig</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#case-content">Skip to case study</a>
+    <header class="case-study-header">
+      <div class="site-header">
+        <a class="logo" href="index.html" aria-label="Kate Craig home">KC<span>.</span></a>
+        <a class="back-link" href="index.html#projects">← Back to work</a>
+      </div>
+    </header>
+
+    <main id="case-content" tabindex="-1">
+      <section class="case-hero">
+        <p class="case-kicker">SOFTWARE DEVELOPMENT · INTERNSHIP</p>
+        <h1>IDX Property<br /><em>Search.</em></h1>
+        <p class="case-intro">A 12-week full-stack internship project centered on building a Zillow-style property-search experience and learning how a React frontend, Express API, and MySQL database work together.</p>
+        <div class="case-actions">
+          <a class="button button-primary" href="https://kate-idx-property-demo.katheriine-reed.chatgpt.site" target="_blank" rel="noreferrer">Try live demo <span>↗</span></a>
+          <a class="button button-text" href="https://github.com/katereed2/idx-property-search" target="_blank" rel="noreferrer">View code on GitHub ↗</a>
+        </div>
+        <p class="case-demo-note">The live demo runs my original React listings, filters, pagination, and property-detail code with a fictional browser-based dataset replacing the private database.</p>
+      </section>
+
+      <dl class="case-meta">
+        <div><dt>Project</dt><dd>Property-search application</dd></div>
+        <div><dt>Duration</dt><dd>12-week internship</dd></div>
+        <div><dt>Focus</dt><dd>Full-stack development</dd></div>
+        <div><dt>Stack</dt><dd>React, Express, MySQL</dd></div>
+      </dl>
+
+      <section class="case-section alt" id="my-work">
+        <div class="case-grid">
+          <div>
+            <p class="section-label">01 / THE PROJECT</p>
+            <h2>Learning the complete product flow.</h2>
+          </div>
+          <div class="case-body">
+            <p>The project was structured as a week-by-week software engineering experience. I worked through the path from setting up a local database to connecting it to a backend API and then displaying searchable property data in a frontend interface.</p>
+            <ul class="responsibility-list">
+              <li>Set up a MySQL property database in a Docker development environment.</li>
+              <li>Worked with REST API routes for listings, filters, property details, and open-house information.</li>
+              <li>Built React interface pieces for search results, filters, pagination, and property-detail views.</li>
+              <li>Practiced validation, error handling, testing, documentation, and Git-based development.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <div class="case-grid">
+          <div>
+            <p class="section-label">02 / ARCHITECTURE</p>
+            <h2>Three layers, one experience.</h2>
+          </div>
+          <div class="case-body">
+            <p>The frontend never connects directly to the database. React sends requests to the Express API, which validates the request, queries MySQL, and returns the property data needed by the interface.</p>
+            <div class="architecture" aria-label="React connects to Express API, which connects to MySQL">
+              <div>React<br />interface</div><span aria-hidden="true">→</span><div>Express<br />REST API</div><span aria-hidden="true">→</span><div>MySQL<br />database</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <p class="section-label">03 / WHAT I PRACTICED</p>
+        <div class="learning-grid">
+          <article class="learning-card"><h3>Search and filtering</h3><p>Turning user-selected filters into validated API requests and database queries.</p></article>
+          <article class="learning-card"><h3>Pagination</h3><p>Loading manageable groups of listings while keeping navigation clear and responsive.</p></article>
+          <article class="learning-card"><h3>Database thinking</h3><p>Working with property and open-house records, indexes, and query performance.</p></article>
+          <article class="learning-card"><h3>Interface states</h3><p>Accounting for loading, empty results, API errors, and property-detail navigation.</p></article>
+          <article class="learning-card"><h3>Testing</h3><p>Practicing endpoint and component testing around important user flows.</p></article>
+          <article class="learning-card"><h3>Engineering workflow</h3><p>Organizing code, documenting decisions, and using branches and commits to manage progress.</p></article>
+        </div>
+      </section>
+
+      <section class="case-footer">
+        <h2>Try the portfolio demo.</h2>
+        <a class="button button-primary" href="https://kate-idx-property-demo.katheriine-reed.chatgpt.site" target="_blank" rel="noreferrer">Open live demo <span>↗</span></a>
+      </section>
+    </main>
+  </body>
+</html>
