@@ -1,4 +1,4 @@
-# Kate Reed Portfolio
+# Kate Craig Portfolio
 
 A simple, responsive personal portfolio site. It does not need a build step: open `index.html` with the VS Code **Live Server** extension or double-click it to preview locally.
 
