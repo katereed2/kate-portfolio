@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Kate Craig's CSCI 1300 C++ adventure-game case study." />
+    <meta name="theme-color" content="#6d2d5b" />
+    <title>Lion Adventure Game | Kate Craig</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#case-content">Skip to case study</a>
+    <header class="case-study-header">
+      <div class="site-header">
+        <a class="logo" href="index.html" aria-label="Kate Craig home">KC<span>.</span></a>
+        <a class="back-link" href="index.html#projects">← Back to work</a>
+      </div>
+    </header>
+
+    <main id="case-content" tabindex="-1">
+      <section class="case-hero">
+        <p class="case-kicker">CSCI 1300 · C++ PROGRAMMING</p>
+        <h1>Lion Adventure<br /><em>Game.</em></h1>
+        <p class="case-intro">A two-player terminal game that turns object-oriented programming concepts into a branching board-game experience with characters, strategic paths, randomized events, riddles, and changing player stats.</p>
+        <div class="case-actions">
+          <a class="button button-primary" href="#gameplay">Explore the system <span>↓</span></a>
+        </div>
+        <p class="case-demo-note">Created as the final project for CSCI 1300: Starting Computing.</p>
+      </section>
+
+      <dl class="case-meta">
+        <div><dt>Project</dt><dd>Terminal adventure game</dd></div>
+        <div><dt>Format</dt><dd>Two-player experience</dd></div>
+        <div><dt>Focus</dt><dd>Object-oriented programming</dd></div>
+        <div><dt>Language</dt><dd>C++</dd></div>
+      </dl>
+
+      <section class="case-section alt" id="gameplay">
+        <div class="case-grid">
+          <div>
+            <p class="section-label">01 / THE EXPERIENCE</p>
+            <h2>A board game built for the terminal.</h2>
+          </div>
+          <div class="case-body">
+            <p>Each player chooses a lion and follows either the Cub Training or Pride Lands path. Turns combine movement, colored tile events, character statistics, advisors, and decisions that affect progress toward the finish.</p>
+            <ul class="responsibility-list">
+              <li>Designed a complete two-player turn loop with clear menus and input validation.</li>
+              <li>Created distinct characters with pride, stamina, strength, and wisdom attributes.</li>
+              <li>Built two strategic paths with different starting benefits and advisor choices.</li>
+              <li>Loaded riddles, characters, and random events from external text files.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <div class="case-grid">
+          <div>
+            <p class="section-label">02 / GAMEPLAY</p>
+            <h2>Choices shape every turn.</h2>
+          </div>
+          <div class="case-body">
+            <p>The menu keeps the game readable while giving players control over when to review their character, check their position, inspect an advisor, or move forward.</p>
+            <div class="terminal-window" aria-label="Example terminal interaction">
+              <div class="terminal-bar" aria-hidden="true"><span></span><span></span><span></span></div>
+              <pre>WELCOME TO THE LION ADVENTURE
+
+Player 1, choose your path:
+1. Cub Training
+2. Pride Lands
+
+MAIN MENU
+1. Check Player Progress
+2. Review Character
+3. Check Position
+4. Review Your Advisor
+5. Move Forward
+
+&gt; You spun a 4!
+&gt; Oasis tile: +200 to all traits.
+&gt; You earned an extra turn.</pre>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section alt">
+        <div class="case-grid">
+          <div>
+            <p class="section-label">03 / ARCHITECTURE</p>
+            <h2>Separate classes, connected systems.</h2>
+          </div>
+          <div class="case-body">
+            <p>I divided the game into classes so that each part had a focused responsibility. The main game loop coordinates those objects and updates the active player's state after each decision or event.</p>
+            <div class="architecture" aria-label="Board, Lion, and Event classes connect to the game loop">
+              <div>Board<br />movement</div><span aria-hidden="true">+</span><div>Lion<br />player state</div><span aria-hidden="true">+</span><div>Event<br />outcomes</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <p class="section-label">04 / WHAT I PRACTICED</p>
+        <div class="learning-grid">
+          <article class="learning-card"><h3>Object-oriented design</h3><p>Using classes, constructors, encapsulated data, and methods to represent the board, lions, advisors, and events.</p></article>
+          <article class="learning-card"><h3>Game-state logic</h3><p>Tracking positions, statistics, turns, selected paths, character availability, and win conditions.</p></article>
+          <article class="learning-card"><h3>File input</h3><p>Parsing character, riddle, and event data from text files instead of hard-coding every outcome.</p></article>
+          <article class="learning-card"><h3>Random systems</h3><p>Selecting movement values, events, and riddles while keeping their effects connected to player state.</p></article>
+          <article class="learning-card"><h3>Input validation</h3><p>Handling menu choices, full-line answers, capitalization, extra spaces, and repeated character selections.</p></article>
+          <article class="learning-card"><h3>Debugging</h3><p>Tracing interactions between multiple systems and refining a large project across several source files.</p></article>
+        </div>
+      </section>
+
+      <section class="case-footer">
+        <h2>Back to selected work.</h2>
+        <a class="button button-primary" href="index.html#projects">View all projects <span>→</span></a>
+      </section>
+    </main>
+  </body>
+</html>
