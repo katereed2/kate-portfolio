@@ -67,14 +67,28 @@
           </div>
           <div class="case-body">
             <p>Each hash-table node represents a character and contains that character's priority queue. Searching for a name finds the appropriate chain, while the max heap keeps the highest-damage item at its root.</p>
-            <div class="architecture" aria-label="Character name maps to a hash-table bucket and then a max-heap inventory">
-              <div>Character<br />name</div><span aria-hidden="true">→</span><div>Hash-table<br />bucket</div><span aria-hidden="true">→</span><div>Max-heap<br />inventory</div>
+            <div class="inventory-visual" role="img" aria-label="A character is located in a chained hash-table bucket that contains a max-heap inventory">
+              <div class="hash-buckets" aria-hidden="true">
+                <p>HASH TABLE</p>
+                <span><b>00</b><i>empty</i></span>
+                <span class="active"><b>01</b><i>Goblin → Orc</i></span>
+                <span><b>02</b><i>Wizard</i></span>
+                <span><b>03</b><i>empty</i></span>
+              </div>
+              <span class="inventory-arrow" aria-hidden="true">→</span>
+              <div class="heap-tree" aria-hidden="true">
+                <p>MAX-HEAP INVENTORY</p>
+                <span class="heap-root">92</span>
+                <span class="heap-left">61</span>
+                <span class="heap-right">48</span>
+                <i class="heap-line-left"></i><i class="heap-line-right"></i>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="case-section alt">
+      <section class="case-section alt route-section">
         <div class="case-grid">
           <div>
             <p class="section-label">03 / ROUTE LOGIC</p>
@@ -82,8 +96,16 @@
           </div>
           <div class="case-body">
             <p>Dungeon rooms become vertices and enemies label the edges between them. The program looks up each enemy's strongest item and uses its damage as the edge weight during Dijkstra-style distance relaxation.</p>
-            <div class="architecture" aria-label="Dungeon graph uses enemy lookup and item damage to calculate route costs">
-              <div>Dungeon<br />graph</div><span aria-hidden="true">+</span><div>Enemy<br />lookup</div><span aria-hidden="true">→</span><div>Route<br />cost</div>
+            <div class="dungeon-graph" role="img" aria-label="A weighted dungeon graph with rooms connected by enemy damage values">
+              <i class="graph-edge edge-one" aria-hidden="true"></i>
+              <i class="graph-edge edge-two" aria-hidden="true"></i>
+              <i class="graph-edge edge-three" aria-hidden="true"></i>
+              <i class="graph-edge edge-four" aria-hidden="true"></i>
+              <span class="graph-node node-gate">GATE<small>start</small></span>
+              <span class="graph-node node-hall">HALL<small>+24</small></span>
+              <span class="graph-node node-crypt">CRYPT<small>+48</small></span>
+              <span class="graph-node node-vault">VAULT<small>finish</small></span>
+              <b class="weight weight-one">24</b><b class="weight weight-two">61</b><b class="weight weight-three">48</b><b class="weight weight-four">92</b>
             </div>
           </div>
         </div>
