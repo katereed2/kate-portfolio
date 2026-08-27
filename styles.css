@@ -47,6 +47,13 @@ footer { display:flex; justify-content:space-between; padding:23px 32px; max-wid
 .game-preview i:nth-of-type(1) { color:#f6a4c0; }
 .game-preview i:nth-of-type(2) { color:#c8ef9f; }
 .game-preview i:nth-of-type(3) { color:#8bbbe2; }
+.data-card { background:#fff !important; }
+.data-preview { position:relative; display:flex; flex-direction:column; justify-content:center; gap:14px; padding:32px; overflow:hidden; background:#142d34; color:#e8f7ef; font-family:"DM Mono",monospace; }
+.data-preview .software-window { background:#a9d78f; color:#142d34; }
+.data-preview i { font-style:normal; font-size:clamp(12px,1.5vw,18px); line-height:1.3; }
+.data-preview i:nth-of-type(1) { color:#8bd3dd; }
+.data-preview i:nth-of-type(2) { color:#f9dd8f; }
+.data-preview i:nth-of-type(3) { color:#f6a4c0; }
 .project-card.featured.project-with-image { display:grid; grid-template-columns:1.05fr 1fr; background:#fff; }
 .project-card.featured .project-preview { height:100%; min-height:350px; }
 .project-card.featured .project-content { min-height:350px; }

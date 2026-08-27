@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Kate Craig's CSCI 2270 data-structures case study." />
+    <meta name="theme-color" content="#6d2d5b" />
+    <title>Dungeon Crawler Data System | Kate Craig</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#case-content">Skip to case study</a>
+    <header class="case-study-header">
+      <div class="site-header">
+        <a class="logo" href="index.html" aria-label="Kate Craig home">KC<span>.</span></a>
+        <a class="back-link" href="index.html#projects">← Back to work</a>
+      </div>
+    </header>
+
+    <main id="case-content" tabindex="-1">
+      <section class="case-hero">
+        <p class="case-kicker">CSCI 2270 · DATA STRUCTURES</p>
+        <h1>Dungeon Crawler<br /><em>Data System.</em></h1>
+        <p class="case-intro">A C++ dungeon-management program that combines three custom data structures to organize character inventories, rank items by damage, and calculate a route through a weighted dungeon graph.</p>
+        <div class="case-actions">
+          <a class="button button-primary" href="#system">Explore the system <span>↓</span></a>
+        </div>
+        <p class="case-demo-note">Created as the final project for CSCI 2270: Data Structures.</p>
+      </section>
+
+      <dl class="case-meta">
+        <div><dt>Project</dt><dd>Dungeon data system</dd></div>
+        <div><dt>Interface</dt><dd>Terminal menu</dd></div>
+        <div><dt>Focus</dt><dd>Data structures</dd></div>
+        <div><dt>Language</dt><dd>C++</dd></div>
+      </dl>
+
+      <section class="case-section alt" id="system">
+        <div class="case-grid">
+          <div>
+            <p class="section-label">01 / THE SYSTEM</p>
+            <h2>Three structures, one connected problem.</h2>
+          </div>
+          <div class="case-body">
+            <p>The program treats each data structure as a specialized layer. Characters are located through a hash table, their inventories are ranked in priority queues, and those item values become weights in the dungeon graph.</p>
+            <ul class="responsibility-list">
+              <li>Implemented a hash table with separate chaining and collision tracking.</li>
+              <li>Built a max-heap priority queue that ranks each character's items by damage.</li>
+              <li>Represented dungeon rooms and enemy connections as an undirected graph.</li>
+              <li>Connected the structures through a menu-driven program and file-based datasets.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <div class="case-grid">
+          <div>
+            <p class="section-label">02 / ITEM MANAGEMENT</p>
+            <h2>Fast lookup meets ranked inventory.</h2>
+          </div>
+          <div class="case-body">
+            <p>Each hash-table node represents a character and contains that character's priority queue. Searching for a name finds the appropriate chain, while the max heap keeps the highest-damage item at its root.</p>
+            <div class="architecture" aria-label="Character name maps to a hash-table bucket and then a max-heap inventory">
+              <div>Character<br />name</div><span aria-hidden="true">→</span><div>Hash-table<br />bucket</div><span aria-hidden="true">→</span><div>Max-heap<br />inventory</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section alt">
+        <div class="case-grid">
+          <div>
+            <p class="section-label">03 / ROUTE LOGIC</p>
+            <h2>Inventory data changes the graph.</h2>
+          </div>
+          <div class="case-body">
+            <p>Dungeon rooms become vertices and enemies label the edges between them. The program looks up each enemy's strongest item and uses its damage as the edge weight during Dijkstra-style distance relaxation.</p>
+            <div class="architecture" aria-label="Dungeon graph uses enemy lookup and item damage to calculate route costs">
+              <div>Dungeon<br />graph</div><span aria-hidden="true">+</span><div>Enemy<br />lookup</div><span aria-hidden="true">→</span><div>Route<br />cost</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <p class="section-label">04 / WHAT I PRACTICED</p>
+        <div class="learning-grid">
+          <article class="learning-card"><h3>Hashing</h3><p>Mapping character names to buckets, traversing linked chains, and measuring collisions.</p></article>
+          <article class="learning-card"><h3>Binary heaps</h3><p>Maintaining a max heap through insertion, bubbling, removal, and recursive heapification.</p></article>
+          <article class="learning-card"><h3>Graphs</h3><p>Building vertices and undirected edges from a file and storing adjacency relationships.</p></article>
+          <article class="learning-card"><h3>Pathfinding</h3><p>Updating weighted distances across unsolved vertices using Dijkstra-style relaxation.</p></article>
+          <article class="learning-card"><h3>Dynamic memory</h3><p>Managing arrays, linked nodes, pointers, graph vertices, and cleanup across custom classes.</p></article>
+          <article class="learning-card"><h3>System integration</h3><p>Connecting multiple custom structures through shared character, item, and enemy data.</p></article>
+        </div>
+      </section>
+
+      <section class="case-footer">
+        <h2>Back to selected work.</h2>
+        <a class="button button-primary" href="index.html#projects">View all projects <span>→</span></a>
+      </section>
+    </main>
+  </body>
+</html>
