@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
+  <body class="case-data">
     <a class="skip-link" href="#case-content">Skip to case study</a>
     <header class="case-study-header">
       <div class="site-header">
@@ -25,6 +25,9 @@
         <p class="case-kicker">CSCI 2270 · DATA STRUCTURES</p>
         <h1>Dungeon Crawler<br /><em>Data System.</em></h1>
         <p class="case-intro">A C++ dungeon-management program that combines three custom data structures to organize character inventories, rank items by damage, and calculate a route through a weighted dungeon graph.</p>
+        <div class="data-system-map" aria-label="The system combines a hash table, max heap, and dungeon graph">
+          <span>HASH TABLE</span><i aria-hidden="true">→</i><span>MAX HEAP</span><i aria-hidden="true">→</i><span>GRAPH</span>
+        </div>
         <div class="case-actions">
           <a class="button button-primary" href="#system">Explore the system <span>↓</span></a>
         </div>
@@ -42,7 +45,7 @@
         <div class="case-grid">
           <div>
             <p class="section-label">01 / THE SYSTEM</p>
-            <h2>Three structures, one connected problem.</h2>
+            <h2>Building a dungeon from data.</h2>
           </div>
           <div class="case-body">
             <p>The program treats each data structure as a specialized layer. Characters are located through a hash table, their inventories are ranked in priority queues, and those item values become weights in the dungeon graph.</p>
