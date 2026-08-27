@@ -23,6 +23,7 @@ h1,h2,h3,p { margin-top:0; } h1 { max-width:800px; margin:22px 0; font-size:clam
 footer { display:flex; justify-content:space-between; padding:23px 32px; max-width:1180px; margin:auto; color:var(--muted); font-family:"DM Mono",monospace; font-size:10px; }
 .project-with-image { padding:0; overflow:hidden; }
 .project-preview { display:block; width:100%; height:240px; padding:18px; object-fit:contain; object-position:center; background:#f5eef2; }
+.project-video { padding:0; object-fit:cover; background:#142d34; }
 .project-content { min-height:260px; padding:26px; display:flex; flex-direction:column; justify-content:space-between; }
 .project-content .project-link { position:static; align-self:flex-start; margin-top:24px; }
 .project-note { margin:24px 0 0; color:#68455e; font-family:"DM Mono",monospace; font-size:11px; line-height:1.5; }
