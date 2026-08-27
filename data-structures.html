@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css?v=20260827-3" />
+    <link rel="stylesheet" href="styles.css?v=20260827-4" />
   </head>
   <body class="case-data">
     <a class="skip-link" href="#case-content">Skip to case study</a>
@@ -112,7 +112,30 @@
       </section>
 
       <section class="case-section">
-        <p class="section-label">04 / WHAT I PRACTICED</p>
+        <div class="case-grid">
+          <div><p class="section-label">04 / CODE DETAIL</p><h2>New items rise to the right position.</h2></div>
+          <div class="case-body">
+            <p>After an item is added to the end of the array, it moves upward while its damage value is greater than its parent's. This preserves the max-heap invariant after every insertion.</p>
+            <div class="code-sample"><div class="code-sample-bar"><span>PriorityQueue.cpp</span><i>C++</i></div><pre><code>void PriorityQ::insertElement(ItemInfo item) {
+  if (currentSize == capacity) return;
+
+  int size = currentSize;
+  heapArr[size] = item;
+  currentSize++;
+
+  while (size != 0 &amp;&amp;
+         heapArr[parent(size)].damage
+           &lt; heapArr[size].damage) {
+    swap(&amp;heapArr[size], &amp;heapArr[parent(size)]);
+    size = parent(size);
+  }
+}</code></pre></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <p class="section-label">05 / WHAT I PRACTICED</p>
         <div class="learning-grid">
           <article class="learning-card"><h3>Hashing</h3><p>Mapping character names to buckets, traversing linked chains, and measuring collisions.</p></article>
           <article class="learning-card"><h3>Binary heaps</h3><p>Maintaining a max heap through insertion, bubbling, removal, and recursive heapification.</p></article>

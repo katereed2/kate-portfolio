@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css?v=20260827-3" />
+    <link rel="stylesheet" href="styles.css?v=20260827-4" />
   </head>
   <body class="case-game">
     <a class="skip-link" href="#case-content">Skip to case study</a>
@@ -103,7 +103,27 @@ MAIN MENU
       </section>
 
       <section class="case-section">
-        <p class="section-label">04 / WHAT I PRACTICED</p>
+        <div class="case-grid">
+          <div><p class="section-label">04 / CODE DETAIL</p><h2>Flexible input makes play feel smoother.</h2></div>
+          <div class="case-body">
+            <p>Riddle answers are read as complete lines and normalized before comparison, so capitalization and accidental spaces do not interrupt the game.</p>
+            <div class="code-sample"><div class="code-sample-bar"><span>main.cpp</span><i>C++</i></div><pre><code>bool askRiddleCorrectly(const vector&lt;Riddle&gt; riddles) {
+  if (riddles.empty()) return false;
+
+  int index = rand() % riddles.size();
+  string playerAnswer;
+  getline(cin &gt;&gt; ws, playerAnswer);
+
+  string correct = toLower(trim(riddles[index].answer));
+  string guess = toLower(trim(playerAnswer));
+  return guess == correct;
+}</code></pre></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <p class="section-label">05 / WHAT I PRACTICED</p>
         <div class="learning-grid">
           <article class="learning-card"><h3>Object-oriented design</h3><p>Using classes, constructors, encapsulated data, and methods to represent the board, lions, advisors, and events.</p></article>
           <article class="learning-card"><h3>Game-state logic</h3><p>Tracking positions, statistics, turns, selected paths, character availability, and win conditions.</p></article>

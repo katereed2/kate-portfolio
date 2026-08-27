@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css?v=20260827-3" />
+    <link rel="stylesheet" href="styles.css?v=20260827-4" />
   </head>
   <body class="case-idx">
     <a class="skip-link" href="#case-content">Skip to case study</a>
@@ -73,7 +73,34 @@
       </section>
 
       <section class="case-section">
-        <p class="section-label">03 / WHAT I PRACTICED</p>
+        <div class="case-grid">
+          <div><p class="section-label">03 / CODE DETAIL</p><h2>Filters become a focused result set.</h2></div>
+          <div class="case-body">
+            <p>The demo keeps filtering and pagination in small functions. Search text and selected values narrow the dataset first, then the current page is sliced from those results.</p>
+            <div class="code-sample"><div class="code-sample-bar"><span>idx-demo.js</span><i>JAVASCRIPT</i></div><pre><code>const results = properties.filter((property) =&gt; {
+  const searchable = [
+    property.address,
+    property.city,
+    property.neighborhood,
+    ...property.features
+  ].join(" ").toLowerCase();
+
+  return (!query || searchable.includes(query))
+    &amp;&amp; (!city || property.city === city)
+    &amp;&amp; property.price &gt;= min
+    &amp;&amp; property.price &lt;= max;
+});
+
+const visible = results.slice(
+  (page - 1) * perPage,
+  page * perPage
+);</code></pre></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <p class="section-label">04 / WHAT I PRACTICED</p>
         <div class="learning-grid">
           <article class="learning-card"><h3>Search and filtering</h3><p>Turning user-selected filters into validated API requests and database queries.</p></article>
           <article class="learning-card"><h3>Pagination</h3><p>Loading manageable groups of listings while keeping navigation clear and responsive.</p></article>
